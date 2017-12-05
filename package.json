@@ -29,7 +29,8 @@
     },
     "bundleDependencies": false,
     "dependencies": {
-        "rxjs": "^5.5.2"
+        "rxjs": "^5.5.2",
+        "nativescript-hook": "^0.2.0"
     },
     "deprecated": false,
     "description": "Your awesome NativeScript plugin.",

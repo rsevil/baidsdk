@@ -1,0 +1,34 @@
+/* Include.gradle configuration: http://docs.nativescript.org/plugins/plugins#includegradle-specification */
+allprojects {
+    repositories {
+        jcenter()
+        maven {
+            url "https://maven.google.com"
+        }
+    }
+}
+android {
+   dexOptions {
+        jumboMode true
+    }
+}
+
+
+android {
+	productFlavors {
+		"nativescript-miba-login" {
+			dimension "nativescript-miba-login"
+		}
+	}
+
+}
+
+dependencies {
+compile(name:'baidsdk', ext:'aar')
+compile 'com.google.android.gms:play-services-auth:11.6.0'
+compile 'com.facebook.android:facebook-android-sdk:4.25.0'
+compile 'com.squareup.okhttp3:okhttp:3.4.1'
+compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+}
+apply plugin: 'com.google.gms.google-services'

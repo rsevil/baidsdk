@@ -93,7 +93,9 @@
         "test.android": "npm i && npm run tsc && npm run tslint && cd ../demo && tns build android && tns test android --justlaunch",
         "test.ios": "npm i && npm run tsc && npm run tslint && cd ../demo && tns build ios && tns test ios --justlaunch",
         "tsc": "tsc -skipLibCheck",
-        "tslint": "cd .. && tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\""
+        "tslint": "cd .. && tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\"",
+        "postinstall": "node postinstall.js",
+        "preuninstall": "node preuninstall.js"
     },
     "typings": "index.d.ts",
     "version": "1.0.0"

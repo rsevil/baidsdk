@@ -55,22 +55,12 @@
     "nativescript": {
         "hooks": [{
                 "type": "before-prepare",
-                "script": "hooks/before-prepare/firebase-build-gradle.js",
+                "script": "lib/goole-services-version.js",
                 "inject": true
             },
             {
                 "type": "after-prepare",
-                "script": "hooks/after-prepare/firebase-install-ios-entitlements.js",
-                "inject": true
-            },
-            {
-                "type": "after-prepare",
-                "script": "hooks/after-prepare/firebase-copy-google-services.js",
-                "inject": true
-            },
-            {
-                "type": "after-prepare",
-                "script": "hooks/after-prepare/firebase-build-gradle.js",
+                "script": "lib/copy-google-services-file.js",
                 "inject": true
             }
         ],
@@ -80,20 +70,6 @@
         }
     },
     "scripts": {
-        "build": "npm i && tsc",
-        "ci.tslint": "npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/node_modules/**'",
-        "clean": "cd ../demo && rimraf hooks node_modules platforms && cd ../src && rimraf node_modules && npm run plugin.link",
-        "demo.android": "npm i && npm run tsc && cd ../demo && tns run android --syncAllFiles",
-        "demo.ios": "npm i && npm run tsc && cd ../demo && tns run ios --syncAllFiles",
-        "demo.reset": "cd ../demo && rimraf platforms",
-        "plugin.link": "npm link && cd ../demo && npm link nativescript-miba-login && cd ../src",
-        "plugin.prepare": "npm run tsc && cd ../demo && tns plugin remove nativescript-miba-login && tns plugin add ../src",
-        "plugin.tscwatch": "npm run tsc -- -w",
-        "postclone": "npm i && node scripts/postclone.js && cd ../demo && npm i && cd ../src && npm run plugin.link",
-        "test.android": "npm i && npm run tsc && npm run tslint && cd ../demo && tns build android && tns test android --justlaunch",
-        "test.ios": "npm i && npm run tsc && npm run tslint && cd ../demo && tns build ios && tns test ios --justlaunch",
-        "tsc": "tsc -skipLibCheck",
-        "tslint": "cd .. && tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\"",
         "postinstall": "node postinstall.js",
         "preuninstall": "node preuninstall.js"
     },

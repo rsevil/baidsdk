@@ -37,6 +37,10 @@ var MibaLogin = (function (_super) {
         }
         return this.userProfile.asObservable();
     };
+    MibaLogin.prototype.clear = function () {
+        this.userProfile.next(null);
+        this.userProfile.complete();
+    };
     MibaLogin.prototype.get = function () {
         return this.userProfile.asObservable();
     };

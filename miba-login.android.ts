@@ -50,6 +50,11 @@ export class MibaLogin extends Common {
         return this.userProfile.asObservable();
     }
 
+    clear() {
+        this.userProfile.next(null);
+        this.userProfile.complete();
+    }
+
     get(): Observable<any> {
         return this.userProfile.asObservable();
     }

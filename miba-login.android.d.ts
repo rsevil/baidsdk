@@ -1,6 +1,7 @@
 import { Common } from './miba-login.common';
 export declare class MibaLogin extends Common {
     get(): any;
+    clear(): any;
     init( apiUrl: string, appId: string, appName: string): any;
 }
 

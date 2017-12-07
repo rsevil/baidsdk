@@ -1,40 +1,35 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var miba_login_common_1 = require("./miba-login.common");
+var BehaviorSubject_1 = require("rxjs/BehaviorSubject");
 var MibaLogin = (function (_super) {
     __extends(MibaLogin, _super);
     function MibaLogin() {
         var _this = _super.call(this) || this;
-        console.log('entro ios');
-        try {
-            console.log('el bundle');
-            _this.BAIdSdk = BAIDLogin;
-            console.dir(_this.BAIdSdk);
-            console.log('que que');
-        }
-        catch (error) {
-            console.log('error');
-        }
+        _this.userProfile = new BehaviorSubject_1.BehaviorSubject({});
         return _this;
     }
-    MibaLogin.prototype.login = function () {
+    MibaLogin.prototype.init = function (apiUrl, appId, appName) {
         var user = {};
-        user.id = 4;
-        user.email = 'mail@ios.com';
-        user.firstName = 'profile.getFirstName()';
-        user.firstName = 'profile.getLastName()';
-        user.document = '7894230795';
-        user.birthday = '2017-20-12';
-        user.phone = '3434652154';
-        user.cellphone = '46215854';
-        user.gender = 'male';
-        user.address = 'mas porco 44';
-        user.token = '4f54fs5465vfcd';
-        user.avatar = 'http://graph.facebook.com/1462759050458482/picture?type=larg';
-        return user;
+        user.miba_id = 2;
+        user.email = "lmilitello@keetup.com";
+        user.firstName = "Lucas";
+        user.mobile = "34833944";
+        user.phone = "45367893";
+        user.address = "alguna calle 234";
+        user.lastName = "Apellidop";
+        user.document = "5427895443";
+        user.document_type = "DNI";
+        user.gender = "male";
+        user.birthday = "12/04/1989";
+        user.profileImage = "https://graph.facebook.com/10155649176666648/picture?type=square";
+        this.userProfile.next(user);
+    };
+    MibaLogin.prototype.login = function () {
+        return this.userProfile.asObservable();
     };
     MibaLogin.prototype.get = function () {
-        return "Initialized MiBaSDK Ni idea che";
+        return this.userProfile.asObservable();
     };
     return MibaLogin;
 }(miba_login_common_1.Common));

@@ -7,3 +7,6 @@ export declare class Common extends Observable {
 export declare class Utils {
     static SUCCESS_MSG(): string;
 }
+export declare class BAIDLogin {
+
+}

@@ -1,0 +1,215 @@
+---
+Module:
+  FullName:        miBALogin
+  IsPartOfFramework: true
+  IsSystemModule:  false
+  Libraries:
+    - Library:         miBALogin
+      IsFramework:     true
+Items:
+  - Name:            _TtC9miBALogin9BAIDLogin
+    JsName:          BAIDLogin
+    Filename:        /Users/development/Sites/ba-mascotas-baid-plugin/src/platforms/ios/miBALogin.framework/Headers/miBALogin-Swift.h
+    Module:
+      FullName:        miBALogin.Swift
+      IsPartOfFramework: true
+      IsSystemModule:  false
+      Libraries:
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Interface
+    InstanceMethods:
+      - Name:            dismiss
+        JsName:          dismiss
+        Filename:        /Users/development/Sites/ba-mascotas-baid-plugin/src/platforms/ios/miBALogin.framework/Headers/miBALogin-Swift.h
+        Module:
+          FullName:        miBALogin.Swift
+          IsPartOfFramework: true
+          IsSystemModule:  false
+          Libraries:
+        Flags:           [ IsIosAppExtensionAvailable ]
+        Type:            Method
+        Signature:
+          - Type:            Void
+      - Name:            initFirebase
+        JsName:          initFirebase
+        Filename:        /Users/development/Sites/ba-mascotas-baid-plugin/src/platforms/ios/miBALogin.framework/Headers/miBALogin-Swift.h
+        Module:
+          FullName:        miBALogin.Swift
+          IsPartOfFramework: true
+          IsSystemModule:  false
+          Libraries:
+        Flags:           [ IsIosAppExtensionAvailable ]
+        Type:            Method
+        Signature:
+          - Type:            Void
+      - Name:            'initWithWindow:error:'
+        JsName:          initWithWindowError
+        Filename:        /Users/development/Sites/ba-mascotas-baid-plugin/src/platforms/ios/miBALogin.framework/Headers/miBALogin-Swift.h
+        Module:
+          FullName:        miBALogin.Swift
+          IsPartOfFramework: true
+          IsSystemModule:  false
+          Libraries:
+        Flags:           [ IsIosAppExtensionAvailable, MethodHasErrorOutParameter, MethodIsInitializer ]
+        Type:            Method
+        Signature:
+          - Type:            Instancetype
+          - Type:            Interface
+            JsName:          UIWindow
+            WithProtocols:
+          - Type:            Pointer
+            PointerType:
+              Type:            Interface
+              JsName:          NSError
+              WithProtocols:
+      - Name:            'isValidTokenWithCompletion:'
+        JsName:          isValidTokenWithCompletion
+        Filename:        /Users/development/Sites/ba-mascotas-baid-plugin/src/platforms/ios/miBALogin.framework/Headers/miBALogin-Swift.h
+        Module:
+          FullName:        miBALogin.Swift
+          IsPartOfFramework: true
+          IsSystemModule:  false
+          Libraries:
+        Flags:           [ IsIosAppExtensionAvailable ]
+        Type:            Method
+        Signature:
+          - Type:            Void
+          - Type:            Block
+            Signature:
+              - Type:            Void
+              - Type:            Bool
+      - Name:            'loginWithOver:success:cancel:showsCancelButton:'
+        JsName:          loginWithOverSuccessCancelShowsCancelButton
+        Filename:        /Users/development/Sites/ba-mascotas-baid-plugin/src/platforms/ios/miBALogin.framework/Headers/miBALogin-Swift.h
+        Module:
+          FullName:        miBALogin.Swift
+          IsPartOfFramework: true
+          IsSystemModule:  false
+          Libraries:
+        Flags:           [ IsIosAppExtensionAvailable ]
+        Type:            Method
+        Signature:
+          - Type:            Void
+          - Type:            Interface
+            JsName:          UIViewController
+            WithProtocols:
+          - Type:            Block
+            Signature:
+              - Type:            Void
+              - Type:            Interface
+                JsName:          NSString
+                WithProtocols:
+          - Type:            Block
+            Signature:
+              - Type:            Void
+          - Type:            Bool
+      - Name:            'logoutWithSuccess:failure:'
+        JsName:          logoutWithSuccessFailure
+        Filename:        /Users/development/Sites/ba-mascotas-baid-plugin/src/platforms/ios/miBALogin.framework/Headers/miBALogin-Swift.h
+        Module:
+          FullName:        miBALogin.Swift
+          IsPartOfFramework: true
+          IsSystemModule:  false
+          Libraries:
+        Flags:           [ IsIosAppExtensionAvailable ]
+        Type:            Method
+        Signature:
+          - Type:            Void
+          - Type:            Block
+            Signature:
+              - Type:            Void
+          - Type:            Block
+            Signature:
+              - Type:            Void
+    StaticMethods:
+    InstanceProperties:
+      - Name:            accessToken
+        JsName:          accessToken
+        Filename:        /Users/development/Sites/ba-mascotas-baid-plugin/src/platforms/ios/miBALogin.framework/Headers/miBALogin-Swift.h
+        Module:
+          FullName:        miBALogin.Swift
+          IsPartOfFramework: true
+          IsSystemModule:  false
+          Libraries:
+        Flags:           [ IsIosAppExtensionAvailable ]
+        Type:            Property
+        Getter:
+          Name:            accessToken
+          JsName:          accessToken
+          Filename:        /Users/development/Sites/ba-mascotas-baid-plugin/src/platforms/ios/miBALogin.framework/Headers/miBALogin-Swift.h
+          Module:
+            FullName:        miBALogin.Swift
+            IsPartOfFramework: true
+            IsSystemModule:  false
+            Libraries:
+          Flags:           [ IsIosAppExtensionAvailable ]
+          Type:            Method
+          Signature:
+            - Type:            Interface
+              JsName:          NSString
+              WithProtocols:
+      - Name:            profile
+        JsName:          profile
+        Filename:        /Users/development/Sites/ba-mascotas-baid-plugin/src/platforms/ios/miBALogin.framework/Headers/miBALogin-Swift.h
+        Module:
+          FullName:        miBALogin.Swift
+          IsPartOfFramework: true
+          IsSystemModule:  false
+          Libraries:
+        Flags:           [ IsIosAppExtensionAvailable ]
+        Type:            Property
+        Getter:
+          Name:            profile
+          JsName:          profile
+          Filename:        /Users/development/Sites/ba-mascotas-baid-plugin/src/platforms/ios/miBALogin.framework/Headers/miBALogin-Swift.h
+          Module:
+            FullName:        miBALogin.Swift
+            IsPartOfFramework: true
+            IsSystemModule:  false
+            Libraries:
+          Flags:           [ IsIosAppExtensionAvailable ]
+          Type:            Method
+          Signature:
+            - Type:            Interface
+              JsName:          NSDictionary
+              TypeParameters:
+                - Type:            Interface
+                  JsName:          NSString
+                  WithProtocols:
+                - Type:            Id
+                  WithProtocols:
+              WithProtocols:
+    StaticProperties:
+    Protocols:
+    Base:            NSObject
+  - Name:            miBALoginVersionNumber
+    JsName:          miBALoginVersionNumber
+    Filename:        /Users/development/Sites/ba-mascotas-baid-plugin/src/platforms/ios/miBALogin.framework/Headers/miBALogin.h
+    Module:
+      FullName:        miBALogin
+      IsPartOfFramework: true
+      IsSystemModule:  false
+      Libraries:
+        - Library:         miBALogin
+          IsFramework:     true
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            Double
+  - Name:            miBALoginVersionString
+    JsName:          miBALoginVersionString
+    Filename:        /Users/development/Sites/ba-mascotas-baid-plugin/src/platforms/ios/miBALogin.framework/Headers/miBALogin.h
+    Module:
+      FullName:        miBALogin
+      IsPartOfFramework: true
+      IsSystemModule:  false
+      Libraries:
+        - Library:         miBALogin
+          IsFramework:     true
+    Flags:           [ IsIosAppExtensionAvailable ]
+    Type:            Var
+    Signature:
+      Type:            IncompleteArray
+      ArrayType:
+        Type:            UChar
+...

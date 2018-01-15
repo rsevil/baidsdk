@@ -21,7 +21,6 @@ var MibaLogin = (function (_super) {
         user.document = "5427895443";
         user.document_type = "DNI";
         user.gender = "male";
-        user.birthday = "12/04/1989";
         user.profileImage = "https://graph.facebook.com/10155649176666648/picture?type=square";
         this.userProfile.next(user);
     };

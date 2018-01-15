@@ -2,6 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<!--Describe the permissions, features or other configurations required by your plugin for iOS.-->
+  <key>AcceptInvalidCertificates</key>
+	<true/>
+	<key>ApiAppTokenDEV</key>
+	<string>85dcf7df9343952f25b1efecb47d5d1ae5f9d8d6</string>
+	<key>ApiAppTokenHML</key>
+	<string>124cc29c73c1eb5fb20a600d475832b54258d87a</string>
+	<key>ApiAppTokenPROD</key>
+	<string>72c60fd02478488482c65c1adbca65cabd250e83</string>
+	<key>ApiAppTokenQA</key>
+	<string>8d0c16704a87f3793d6207c624046f022dae4ed3</string>
+	<key>BAIDurlDEV</key>
+	<string>https://miba.dev.gcba.gob.ar</string>
+	<key>BAIDurlHML</key>
+	<string>https://miba.hml.gcba.gob.ar</string>
+	<key>BAIDurlPROD</key>
+	<string>https://miba.buenosaires.gob.ar</string>
+	<key>BAIDurlQA</key>
+	<string>https://miba.qa.gcba.gob.ar</string>
 </dict>
 </plist>

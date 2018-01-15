@@ -172,6 +172,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # define SWIFT_DEPRECATED_OBJC(Msg) SWIFT_DEPRECATED_MSG(Msg)
 #endif
 #if __has_feature(modules)
+@import ObjectiveC;
 @import Foundation;
 @import UIKit;
 #endif
@@ -185,6 +186,22 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Wnullability"
 
 SWIFT_MODULE_NAMESPACE_PUSH("miBALogin")
+@class UIWindow;
+@class UIViewController;
+
+SWIFT_CLASS("_TtC9miBALogin9BAIDLogin")
+@interface BAIDLogin : NSObject
+- (nullable instancetype)initWithWindow:(UIWindow * _Nonnull)window error:(NSError * _Nullable * _Nullable)error;
+- (void)loginWithOver:(UIViewController * _Nonnull)over success:(void (^ _Nonnull)(NSString * _Nonnull))success cancel:(void (^ _Nonnull)(void))cancel showsCancelButton:(BOOL)showsCancelButton;
+@property (nonatomic, readonly, copy) NSString * _Nullable accessToken;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nullable profile;
+- (void)isValidTokenWithCompletion:(void (^ _Nonnull)(BOOL))completion;
+- (void)logoutWithSuccess:(void (^ _Nullable)(void))success failure:(void (^ _Nullable)(void))failure;
+- (void)dismiss;
+- (void)initFirebase SWIFT_METHOD_FAMILY(none);
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
 
 
 

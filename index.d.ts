@@ -6,9 +6,3 @@ export declare class MibaLogin extends Common {
      clear(): any;
      init( apiUrl: string, appId: string, appName: string): any;
 }
-
-export declare class BAIDApi extends NSObject {
-  static  alloc(): BAIDApi;
-  static  new(): BAIDApi;
-
-  }

@@ -38,6 +38,11 @@ var MibaLogin = (function (_super) {
         }
         return this.userProfile.asObservable();
     };
+    MibaLogin.prototype.showProfile = function () {
+        if (this.BAIdSdk.isInitialized()) {
+            this.LManager.getInstance().profile(application.android.startActivity);
+        }
+    };
     MibaLogin.prototype.clear = function () {
         this.userProfile.complete();
         this.userProfile.next(null);

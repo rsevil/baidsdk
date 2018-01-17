@@ -27,7 +27,6 @@ var MibaLogin = (function (_super) {
         application.android.on(application.AndroidApplication.activityResultEvent, function (args) {
             if (baid.gcba.com.loginbaid.BaIdAccessToken) {
                 var profile = baid.gcba.com.loginbaid.BAIdSdk.getProfile();
-                console.log('Id de Usuario: ' + profile.getId());
                 _this.userProfile.next(profile);
             }
         });

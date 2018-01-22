@@ -30,8 +30,12 @@ var MibaLogin = (function (_super) {
     MibaLogin.prototype.login = function () {
         return this.userProfile.asObservable();
     };
+    MibaLogin.prototype.dismiss = function () {
+        this.miba.dismiss();
+    };
     MibaLogin.prototype.showProfile = function () {
-        this.miba.showProfileWithOverSuccessCancel(application.ios.rootController, function () { }, function () { });
+        this.miba.showProfileWithOverSuccessCancel(application.ios.rootController, function (update) {
+        }, function () { });
     };
     MibaLogin.prototype.get = function () {
         return this.userProfile.asObservable();

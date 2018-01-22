@@ -37,6 +37,9 @@ var MibaLogin = (function (_super) {
         }
         return this.userProfile.asObservable();
     };
+    MibaLogin.prototype.dismiss = function () {
+        return;
+    };
     MibaLogin.prototype.showProfile = function () {
         if (this.BAIdSdk.isInitialized()) {
             this.LManager.getInstance().profile(application.android.startActivity);

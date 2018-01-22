@@ -5,6 +5,7 @@ export declare class MibaLogin extends Common {
      login(): any;
      clear(): any;
      showProfile(): any;
+     dismiss(): any;
      init( apiUrl: string, appId: string, appName: string): any;
 }
 

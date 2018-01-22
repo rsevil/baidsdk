@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var miba_login_common_1 = require("./miba-login.common");
+var application = require("tns-core-modules/application");
 var BehaviorSubject_1 = require("rxjs/BehaviorSubject");
 var MibaLogin = (function (_super) {
     __extends(MibaLogin, _super);
@@ -10,22 +11,26 @@ var MibaLogin = (function (_super) {
         return _this;
     }
     MibaLogin.prototype.init = function (apiUrl, appId, appName) {
+        var _this = this;
         var user = {};
-        user.miba_id = 2;
-        user.email = "lmilitello@keetup.com";
-        user.firstName = "Lucas";
-        user.mobile = "34833944";
-        user.phone = "45367893";
-        user.address = "alguna calle 234";
-        user.lastName = "Apellidop";
-        user.document = "5427895443";
-        user.document_type = "DNI";
-        user.gender = "male";
-        user.profileImage = "https://graph.facebook.com/10155649176666648/picture?type=square";
-        this.userProfile.next(user);
+        try {
+            this.miba = BAIDLogin.alloc().initWithWindowError(application.ios.window);
+            this.miba.loginWithOverSuccessCancelShowsCancelButton(application.ios.rootController, function () {
+                if (_this.miba.accessToken) {
+                    var user_1 = JSON.parse(_this.miba.profileJSON);
+                    _this.userProfile.next(user_1);
+                }
+            }, function () {
+            }, false);
+        }
+        catch (error) {
+            console.dir(error);
+        }
     };
     MibaLogin.prototype.login = function () {
         return this.userProfile.asObservable();
+    };
+    MibaLogin.prototype.showProfile = function () {
     };
     MibaLogin.prototype.get = function () {
         return this.userProfile.asObservable();

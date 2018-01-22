@@ -3,8 +3,8 @@ allprojects {
     repositories {
         jcenter()
         maven {
-            url "https://maven.google.com"
-        }
+      url "https://plugins.gradle.org/m2/"
+    }
     }
 }
 android {
@@ -27,14 +27,15 @@ dependencies {
 compile(name:'baidsdk', ext:'aar')
 compile 'com.google.android.gms:play-services-auth:11.6.0'
 compile 'com.facebook.android:facebook-android-sdk:4.25.0'
+compile 'com.facebook.fresco:fresco:0.6.0+'
 compile 'com.squareup.okhttp3:okhttp:3.4.1'
 compile 'com.squareup.retrofit2:converter-gson:2.1.0'
 compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
-compile 'com.android.support:appcompat-v7:26.0.0'
-compile 'com.android.support:design:26.0.0+'
+compile 'com.android.support:appcompat-v7:26.1.0'
+compile 'com.android.support:design:25.1.0'
 compile 'com.android.support:multidex:1.0.1'
-compile 'com.android.support:support-v4:26.0.0+'
-compile 'com.android.support:cardview-v7:26.0.0+'
+compile 'com.android.support:support-v4:26.1.0'
+compile 'com.android.support:cardview-v7:26.1.0'
 compile 'com.google.code.gson:gson:2.+'
 compile 'com.squareup.retrofit2:retrofit:2.1.0'
 compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'

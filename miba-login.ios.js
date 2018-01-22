@@ -18,6 +18,7 @@ var MibaLogin = (function (_super) {
             this.miba.loginWithOverSuccessCancelShowsCancelButton(application.ios.rootController, function () {
                 if (_this.miba.accessToken) {
                     var user_1 = JSON.parse(_this.miba.profileJSON);
+                    _this.miba.dismiss();
                     _this.userProfile.next(user_1);
                 }
             }, function () {
@@ -31,9 +32,11 @@ var MibaLogin = (function (_super) {
         return this.userProfile.asObservable();
     };
     MibaLogin.prototype.dismiss = function () {
+        this.miba = BAIDLogin.alloc().initWithWindowError(application.ios.window);
         this.miba.dismiss();
     };
     MibaLogin.prototype.showProfile = function () {
+        this.miba = BAIDLogin.alloc().initWithWindowError(application.ios.window);
         this.miba.showProfileWithOverSuccessCancel(application.ios.rootController, function (update) {
         }, function () { });
     };

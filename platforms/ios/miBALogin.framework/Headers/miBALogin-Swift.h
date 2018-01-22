@@ -188,6 +188,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 SWIFT_MODULE_NAMESPACE_PUSH("miBALogin")
 @class UIWindow;
 @class UIViewController;
+enum ProfileUpdateOperation : NSInteger;
 
 SWIFT_CLASS("_TtC9miBALogin9BAIDLogin")
 @interface BAIDLogin : NSObject
@@ -196,6 +197,7 @@ SWIFT_CLASS("_TtC9miBALogin9BAIDLogin")
 @property (nonatomic, readonly, copy) NSString * _Nullable accessToken;
 @property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nullable profile;
 @property (nonatomic, readonly, copy) NSString * _Nullable profileJSON;
+- (void)showProfileWithOver:(UIViewController * _Nonnull)over success:(void (^ _Nonnull)(enum ProfileUpdateOperation))success cancel:(void (^ _Nonnull)(void))cancel;
 - (void)isValidTokenWithCompletion:(void (^ _Nonnull)(BOOL))completion;
 - (void)logoutWithSuccess:(void (^ _Nullable)(void))success failure:(void (^ _Nullable)(void))failure;
 - (void)dismiss;
@@ -209,6 +211,11 @@ SWIFT_CLASS("_TtC9miBALogin9BAIDLogin")
 
 
 
+
+typedef SWIFT_ENUM(NSInteger, ProfileUpdateOperation) {
+  ProfileUpdateOperationProfileUpdated = 0,
+  ProfileUpdateOperationPasswordChanged = 1,
+};
 
 
 

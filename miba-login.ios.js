@@ -31,6 +31,7 @@ var MibaLogin = (function (_super) {
         return this.userProfile.asObservable();
     };
     MibaLogin.prototype.showProfile = function () {
+        this.miba.showProfileWithOverSuccessCancel(application.ios.rootController, function () { }, function () { });
     };
     MibaLogin.prototype.get = function () {
         return this.userProfile.asObservable();

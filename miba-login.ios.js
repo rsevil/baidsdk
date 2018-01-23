@@ -15,7 +15,7 @@ var MibaLogin = (function (_super) {
         var _this = this;
         var user = {};
         try {
-            this.miba = BAIDLogin.alloc().initWithWindowError(application.ios.window);
+            this.miba = BAIDLogin.alloc().initWithWindowError(application.ios.rootController);
             this.miba.loginWithOverSuccessCancelShowsCancelButton(application.ios.rootController, function () {
                 if (_this.miba.accessToken) {
                     var user_1 = JSON.parse(_this.miba.profileJSON);

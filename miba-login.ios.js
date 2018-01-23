@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var miba_login_common_1 = require("./miba-login.common");
 var application = require("tns-core-modules/application");
 var BehaviorSubject_1 = require("rxjs/BehaviorSubject");
+var frameModule = require("tns-core-modules/ui/frame");
 var MibaLogin = (function (_super) {
     __extends(MibaLogin, _super);
     function MibaLogin() {
@@ -18,7 +19,7 @@ var MibaLogin = (function (_super) {
             this.miba.loginWithOverSuccessCancelShowsCancelButton(application.ios.rootController, function () {
                 if (_this.miba.accessToken) {
                     var user_1 = JSON.parse(_this.miba.profileJSON);
-                    _this.miba.dismiss();
+                    _this.dismiss();
                     _this.userProfile.next(user_1);
                 }
             }, function () {
@@ -32,11 +33,10 @@ var MibaLogin = (function (_super) {
         return this.userProfile.asObservable();
     };
     MibaLogin.prototype.dismiss = function () {
-        this.miba = BAIDLogin.alloc().initWithWindowError(application.ios.window);
-        this.miba.dismiss();
+        frameModule.topmost().goBack();
     };
     MibaLogin.prototype.showProfile = function () {
-        this.miba = BAIDLogin.alloc().initWithWindowError(application.ios.window);
+        this.miba = BAIDLogin.alloc().initWithWindowError(application.ios.rootController);
         this.miba.showProfileWithOverSuccessCancel(application.ios.rootController, function (update) {
         }, function () { });
     };

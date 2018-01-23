@@ -45,6 +45,4 @@ compile 'com.jakewharton.rxbinding:rxbinding-appcompat-v7:1.0.1'
 compile('com.jayway.jsonpath:json-path:2.2.0') { exclude group: 'org.ow2.asm' }
 }
 apply plugin: 'com.google.gms.google-services'
-plugins {
-  id "me.tatarka.retrolambda" version "3.7.0"
-}
+apply plugin: 'me.tatarka.retrolambda'

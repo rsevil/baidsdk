@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Rx';
 export declare class MibaLogin extends Common {
      get(): any;
      login(): any;
+     logOut(): any;
      clear(): any;
      showProfile(): any;
      dismiss(): any;

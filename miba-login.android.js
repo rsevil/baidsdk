@@ -40,6 +40,9 @@ var MibaLogin = (function (_super) {
     MibaLogin.prototype.dismiss = function () {
         return;
     };
+    MibaLogin.prototype.logOut = function () {
+        this.clear();
+    };
     MibaLogin.prototype.showProfile = function () {
         if (this.BAIdSdk.isInitialized()) {
             this.LManager.getInstance().profile(application.android.startActivity);

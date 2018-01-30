@@ -25,6 +25,7 @@ android {
 
 dependencies {
 compile(name:'baidsdk', ext:'aar')
+compile(name:'callejerogcba', ext:'aar')
 compile 'com.google.android.gms:play-services-auth:11.6.0'
 compile 'com.facebook.android:facebook-android-sdk:4.25.0'
 compile 'com.facebook.fresco:fresco:1.4.0+'

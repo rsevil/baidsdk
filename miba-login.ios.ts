@@ -27,12 +27,6 @@ export class MibaLogin extends Common {
         }
     }
 
-    getProfile(){
-      let user = JSON.parse(this.miba.profileJSON);
-      this.userProfile.next(user);
-      return this.userProfile.asObservable();
-    }
-
     login() {
       // //hacemos un login en miba
       this.miba.loginWithOverSuccessCancelShowsCancelButton(
@@ -68,13 +62,15 @@ export class MibaLogin extends Common {
     showProfile() {
 
       this.miba.showProfileWithOverSuccessCancel( application.ios.rootController,(update)=>{
-         this.miba.dismiss();
+        let user = JSON.parse(this.miba.profileJSON);
+           this.miba.dismiss();
+          this.userProfile.next(user);
     },()=>{
        this.miba.dismiss();
     });
     }
 
-    get(): Observable<any> {
+    get(){
         return this.userProfile.asObservable();
     }
 }

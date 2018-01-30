@@ -44,8 +44,6 @@ var MibaLogin = (function (_super) {
         this.clear();
     };
     MibaLogin.prototype.getProfile = function () {
-        var profile = baid.gcba.com.loginbaid.BAIdSdk.getProfile();
-        this.userProfile.next(profile);
         return this.userProfile.asObservable();
     };
     MibaLogin.prototype.showProfile = function () {

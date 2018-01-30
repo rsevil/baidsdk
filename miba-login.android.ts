@@ -60,8 +60,7 @@ export class MibaLogin extends Common {
     }
 
     getProfile(){
-          let profile = baid.gcba.com.loginbaid.BAIdSdk.getProfile();
-          this.userProfile.next(profile);
+
           return this.userProfile.asObservable();
 
     }
@@ -79,7 +78,7 @@ export class MibaLogin extends Common {
         this.userProfile.next(null);
     }
 
-    get(): Observable<any> {
+    get() {
         return this.userProfile.asObservable();
     }
 }

@@ -19,11 +19,6 @@ var MibaLogin = (function (_super) {
             console.dir(error);
         }
     };
-    MibaLogin.prototype.getProfile = function () {
-        var user = JSON.parse(this.miba.profileJSON);
-        this.userProfile.next(user);
-        return this.userProfile.asObservable();
-    };
     MibaLogin.prototype.login = function () {
         var _this = this;
         this.miba.loginWithOverSuccessCancelShowsCancelButton(application.ios.rootController, function () {
@@ -46,7 +41,9 @@ var MibaLogin = (function (_super) {
     MibaLogin.prototype.showProfile = function () {
         var _this = this;
         this.miba.showProfileWithOverSuccessCancel(application.ios.rootController, function (update) {
+            var user = JSON.parse(_this.miba.profileJSON);
             _this.miba.dismiss();
+            _this.userProfile.next(user);
         }, function () {
             _this.miba.dismiss();
         });

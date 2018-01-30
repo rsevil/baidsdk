@@ -36,7 +36,6 @@ var MibaLogin = (function (_super) {
     };
     MibaLogin.prototype.logOut = function () {
         this.miba.logoutWithSuccessFailure(function () {
-            console.log('logged out');
         }, function () { });
     };
     MibaLogin.prototype.showProfile = function () {

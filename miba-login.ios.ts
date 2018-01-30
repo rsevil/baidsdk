@@ -55,7 +55,7 @@ export class MibaLogin extends Common {
 
     logOut(){
       this.miba.logoutWithSuccessFailure(() => {
-        console.log('logged out')
+//
       }, () => {});
     }
 

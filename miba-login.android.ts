@@ -59,6 +59,13 @@ export class MibaLogin extends Common {
       this.clear();
     }
 
+    getProfile(){
+          let profile = baid.gcba.com.loginbaid.BAIdSdk.getProfile();
+          this.userProfile.next(profile);
+          return this.userProfile.asObservable();
+
+    }
+
 
     showProfile() {
         // plugin inicializado

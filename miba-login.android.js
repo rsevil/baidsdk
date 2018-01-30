@@ -43,6 +43,11 @@ var MibaLogin = (function (_super) {
     MibaLogin.prototype.logOut = function () {
         this.clear();
     };
+    MibaLogin.prototype.getProfile = function () {
+        var profile = baid.gcba.com.loginbaid.BAIdSdk.getProfile();
+        this.userProfile.next(profile);
+        return this.userProfile.asObservable();
+    };
     MibaLogin.prototype.showProfile = function () {
         if (this.BAIdSdk.isInitialized()) {
             this.LManager.getInstance().profile(application.android.startActivity);

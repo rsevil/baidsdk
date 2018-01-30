@@ -19,6 +19,11 @@ var MibaLogin = (function (_super) {
             console.dir(error);
         }
     };
+    MibaLogin.prototype.getProfile = function () {
+        var user = JSON.parse(this.miba.profileJSON);
+        this.userProfile.next(user);
+        return this.userProfile.asObservable();
+    };
     MibaLogin.prototype.login = function () {
         var _this = this;
         this.miba.loginWithOverSuccessCancelShowsCancelButton(application.ios.rootController, function () {

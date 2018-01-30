@@ -27,6 +27,12 @@ export class MibaLogin extends Common {
         }
     }
 
+    getProfile(){
+      let user = JSON.parse(this.miba.profileJSON);
+      this.userProfile.next(user);
+      return this.userProfile.asObservable();
+    }
+
     login() {
       // //hacemos un login en miba
       this.miba.loginWithOverSuccessCancelShowsCancelButton(
@@ -55,7 +61,7 @@ export class MibaLogin extends Common {
 
     logOut(){
       this.miba.logoutWithSuccessFailure(() => {
-//
+        //
       }, () => {});
     }
 

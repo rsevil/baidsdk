@@ -16,7 +16,7 @@ platform :ios, '10.0'
   pod 'RxCocoa'
 
   pod 'Kingfisher', '~> 3.3'
-  pod 'USIGNormalizador', '~> 0.3.0'
+  pod 'USIGNormalizador', '~> 1.0.0'
 
 
 

@@ -22,7 +22,6 @@ var MibaLogin = (function (_super) {
             this.BAIdSdk.setEnvironment(apiUrl, appId, false);
         }
         catch (error) {
-            console.log('error');
         }
         application.android.on(application.AndroidApplication.activityResultEvent, function (args) {
             if (baid.gcba.com.loginbaid.BaIdAccessToken) {

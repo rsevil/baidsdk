@@ -16,7 +16,6 @@ var MibaLogin = (function (_super) {
             this.miba = BAIDLogin.alloc().initWithWindowError(application.ios.rootController);
         }
         catch (error) {
-            console.dir(error);
         }
     };
     MibaLogin.prototype.login = function () {

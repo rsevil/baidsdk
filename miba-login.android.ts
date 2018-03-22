@@ -31,13 +31,14 @@ export class MibaLogin extends Common {
             this.BAIdSdk.initialize(application.android.startActivity, appName​​);
             this.BAIdSdk.setEnvironment(apiUrl, appId, false);
         } catch (error) {
-            console.log('error');
+
         }
 
         application.android.on(application.AndroidApplication.activityResultEvent, (args: any ) => {
             if (baid.gcba.com.loginbaid.BaIdAccessToken) {
                 let profile = baid.gcba.com.loginbaid.BAIdSdk.getProfile();
                 this.userProfile.next(profile);
+
             }
         });
     }
@@ -48,6 +49,7 @@ export class MibaLogin extends Common {
             this.LManager.getInstance().login(application.android.startActivity);
         }
         return this.userProfile.asObservable();
+
     }
 
     dismiss() {

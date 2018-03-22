@@ -23,7 +23,7 @@ export class MibaLogin extends Common {
 
         }
         catch (error) {
-          console.dir(error);
+    
         }
     }
 

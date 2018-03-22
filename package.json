@@ -7,6 +7,16 @@
     "nativescript": {
         "hooks": [
             {
+                "type": "before-prepare",
+                "script": "hooks/before-prepare/firebase-build-gradle.js",
+                "inject": true
+            },
+            {
+                "type": "after-prepare",
+                "script": "hooks/after-prepare/firebase-install-ios-entitlements.js",
+                "inject": true
+            },
+            {
                 "type": "after-prepare",
                 "script": "hooks/after-prepare/firebase-copy-google-services.js",
                 "inject": true

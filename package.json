@@ -1,24 +1,66 @@
 {
-    "name": "nativescript-miba-login",
-    "version": "1.0.0",
+    "_from": "file:/Users/development/Sites/bam-mobile/nativescript-miba-login-1.0.0.tgz",
+    "_id": "nativescript-miba-login@1.0.0",
+    "_inBundle": false,
+    "_integrity": "sha1-3ZGll7r9m8gmOqRE6nmcktDzkfU=",
+    "_location": "/nativescript-miba-login",
+    "_phantomChildren": {},
+    "_requested": {
+        "type": "file",
+        "where": "/Users/development/Sites/bam-mobile",
+        "raw": "/Users/development/Sites/bam-mobile/nativescript-miba-login-1.0.0.tgz",
+        "rawSpec": "/Users/development/Sites/bam-mobile/nativescript-miba-login-1.0.0.tgz",
+        "saveSpec": "file:/Users/development/Sites/bam-mobile/nativescript-miba-login-1.0.0.tgz",
+        "fetchSpec": "/Users/development/Sites/bam-mobile/nativescript-miba-login-1.0.0.tgz"
+    },
+    "_requiredBy": [
+        "#USER"
+    ],
+    "_resolved": "/Users/development/Sites/bam-mobile/nativescript-miba-login-1.0.0.tgz",
+    "_spec": "/Users/development/Sites/bam-mobile/nativescript-miba-login-1.0.0.tgz",
+    "_where": "/Users/development/Sites/bam-mobile",
+    "author": {
+        "name": "Your Name",
+        "email": "youremail@yourdomain.com"
+    },
+    "bootstrapper": "nativescript-plugin-seed",
+    "bugs": {
+        "url": "https://github.com/adegano/nativescript-miba-login/issues"
+    },
+    "bundleDependencies": false,
+    "dependencies": {
+        "rxjs": "^5.5.2",
+        "nativescript-hook": "^0.2.0"
+    },
+    "deprecated": false,
     "description": "Your awesome NativeScript plugin.",
+    "devDependencies": {
+        "prompt": "^1.0.0",
+        "rimraf": "^2.5.0",
+        "tns-core-modules": "^3.1.0",
+        "tns-platform-declarations": "^3.1.0",
+        "tslint": "^5.0.0",
+        "typescript": "~2.3.0"
+    },
+    "homepage": "https://github.com/adegano/nativescript-miba-login",
+    "keywords": [
+        "NativeScript",
+        "JavaScript",
+        "Android",
+        "iOS"
+    ],
+    "license": "Apache-2.0",
     "main": "miba-login",
-    "typings": "index.d.ts",
+    "name": "nativescript-miba-login",
     "nativescript": {
-        "hooks": [
-            {
+        "hooks": [{
                 "type": "before-prepare",
-                "script": "hooks/before-prepare/firebase-build-gradle.js",
+                "script": "lib/goole-services-version.js",
                 "inject": true
             },
             {
                 "type": "after-prepare",
-                "script": "hooks/after-prepare/firebase-copy-google-services.js",
-                "inject": true
-            },
-            {
-                "type": "after-prepare",
-                "script": "hooks/after-prepare/firebase-build-gradle.js",
+                "script": "lib/copy-google-services-file.js",
                 "inject": true
             }
         ],

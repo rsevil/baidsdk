@@ -186,9 +186,21 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class UIWindow;
+@class UIViewController;
+enum ProfileUpdateOperation : NSInteger;
 
 SWIFT_CLASS("_TtC9miBALogin9BAIDLogin")
 @interface BAIDLogin : NSObject
+- (nullable instancetype)initWithWindow:(UIWindow * _Nonnull)window error:(NSError * _Nullable * _Nullable)error;
+- (void)loginWithOver:(UIViewController * _Nonnull)over success:(void (^ _Nonnull)(NSString * _Nonnull))success cancel:(void (^ _Nonnull)(void))cancel showsCancelButton:(BOOL)showsCancelButton;
+@property (nonatomic, readonly, copy) NSString * _Nullable accessToken;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nullable profile;
+@property (nonatomic, readonly, copy) NSString * _Nullable profileJSON;
+- (void)showProfileWithOver:(UIViewController * _Nonnull)over success:(void (^ _Nonnull)(enum ProfileUpdateOperation))success cancel:(void (^ _Nonnull)(void))cancel;
+- (void)isValidTokenWithCompletion:(void (^ _Nonnull)(BOOL))completion;
+- (void)logoutWithSuccess:(void (^ _Nullable)(void))success failure:(void (^ _Nullable)(void))failure;
+- (void)dismiss;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
